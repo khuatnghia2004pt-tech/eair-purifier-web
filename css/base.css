@@ -1,0 +1,7 @@
+:root{--bg:#07182b;--panel:#0d2540;--panel2:#10304f;--line:#1d4a73;--txt:#e8f3ff;--mut:#8fb3d1;--acc:#2ec8ff;--ok:#2fe08a;--warn:#ffb020;--bad:#ff5468}
+*{box-sizing:border-box}html,body{margin:0;height:100%}
+body{font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(1200px 700px at 70% -10%,#12406b 0,var(--bg) 60%);color:var(--txt)}
+button{font:inherit;color:inherit;cursor:pointer}
+input{font:inherit}
+.hidden{display:none!important}
+::-webkit-scrollbar{width:8px;height:8px}::-webkit-scrollbar-thumb{background:#1d4a73;border-radius:8px}

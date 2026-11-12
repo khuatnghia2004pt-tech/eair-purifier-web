@@ -1,0 +1,24 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quản trị – E-Air Purifier</title>
+<link rel="stylesheet" href="css/base.css"><link rel="stylesheet" href="css/login.css"><link rel="stylesheet" href="css/dashboard.css"><link rel="stylesheet" href="css/admin.css"></head>
+<body><div class="wrap">
+ <div class="bar"><a class="back" href="dashboard.html">← Bảng điều khiển</a><h1>🛡 Quản trị tài khoản</h1><span id="conn" class="pill off">Thiết bị: --</span></div>
+ <div class="stats"><div class="stat"><b id="st-all">0</b><span>Tổng tài khoản</span></div><div class="stat"><b id="st-admin">0</b><span>Quản trị viên</span></div>
+  <div class="stat"><b id="st-lock">0</b><span>Đang bị khóa</span></div><div class="stat"><b id="st-new">0</b><span>Mới trong 7 ngày</span></div></div>
+ <div class="panel"><h2>Thêm tài khoản mới</h2>
+  <div class="form"><label class="field" style="margin:0"><span>Email</span><input id="n-email" type="email"></label>
+   <label class="field" style="margin:0"><span>Mật khẩu tạm (≥ 6 ký tự)</span><input id="n-pass" type="text" minlength="6"></label>
+   <label class="field" style="margin:0"><span>Quyền</span><select id="n-role"><option value="user">Người dùng</option><option value="admin">Quản trị</option></select></label>
+   <button class="btn" id="n-add">Tạo</button></div><div class="msg" id="n-msg"></div></div>
+ <div class="panel"><h2>✨ Trợ lý AI (Gemini)</h2>
+  <div class="small" id="ai-backend">Đang kiểm tra backend…</div>
+  <div class="act" style="margin-top:10px;align-items:center"><label><input type="checkbox" id="ai-voice-on" checked> Bật trợ lý giọng nói "Hello …" trên ESP32</label>
+   <button class="btn" id="ai-save" style="width:auto;padding:9px 18px;margin-left:auto">Lưu</button></div><div class="msg" id="ai-msg"></div>
+  <div class="msg err hidden" id="ai-leak">⚠ Phát hiện khóa API cũ lưu trong Firebase (<code>config/ai/apiKey</code>) – ai đăng nhập cũng đọc được. Hãy thu hồi khóa đó trong Google AI Studio rồi xóa khỏi Firebase.
+   <button class="btn" id="ai-purge" style="width:auto;padding:6px 14px;margin-left:8px">Xóa khóa khỏi Firebase</button></div>
+  <div class="note">Khóa Gemini chỉ là biến môi trường <code>GEMINI_API_KEY</code> trên backend (<code>EAir_Backend</code>); web và ESP32 không giữ khóa.</div></div>
+ <div class="panel"><h2>Danh sách tài khoản</h2>
+  <input class="search" id="q" placeholder="Tìm theo email…" style="max-width:320px;margin-bottom:12px">
+  <table class="tbl"><thead><tr><th>Email</th><th>Quyền</th><th>Trạng thái</th><th>Tạo lúc</th><th>Đăng nhập cuối</th><th>Thao tác</th></tr></thead><tbody id="rows"></tbody></table>
+  <div class="note">Xóa hẳn một tài khoản đăng nhập phải làm trong Firebase Console → Authentication (trình duyệt không có quyền làm việc đó). Ở đây bạn có thể <b>khóa</b> để chặn truy cập ngay lập tức.</div></div>
+</div><script type="module" src="js/pages/admin.js"></script></body></html>

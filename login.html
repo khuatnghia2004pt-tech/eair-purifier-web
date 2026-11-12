@@ -1,0 +1,35 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Đăng nhập – E-Air Purifier</title>
+<link rel="stylesheet" href="css/base.css"><link rel="stylesheet" href="css/login.css"></head>
+<body><div class="auth">
+ <section class="auth-hero"><canvas id="bg"></canvas>
+  <div class="brand"><img src="assets/rooms/logo.svg" alt=""> E-AIR PURIFIER</div>
+  <h1>Hệ thống giám sát &amp; điều khiển<br>chất lượng không khí tích hợp AI</h1>
+  <p>Theo dõi CO₂, bụi mịn, VOC, nhiệt độ, độ ẩm theo thời gian thực và điều khiển quạng lọc từ xa.</p>
+  <ul><li>🌬️ Dữ liệu cảm biến realtime từ ESP32-S3</li><li>📅 Tra cứu &amp; tải dữ liệu theo ngày</li><li>🔔 Cảnh báo khi vượt ngưỡng</li></ul>
+ </section>
+ <section class="auth-card-wrap"><div class="auth-card">
+  <form id="f-login" data-view="login">
+   <h2>Chào mừng trở lại</h2><p class="sub">Đăng nhập để vào bảng điều khiển</p>
+   <label class="field"><span>Gmail (hoặc "admin")</span><input id="l-email" type="text" autocomplete="username" required></label>
+   <label class="field"><span>Mật khẩu</span><div class="pw"><input id="l-pass" type="password" autocomplete="current-password" required><button type="button" data-eye="l-pass">👁</button></div></label>
+   <div class="row"><label><input id="l-remember" type="checkbox" checked> Ghi nhớ đăng nhập</label><button type="button" class="link" data-go="forgot">Quên mật khẩu?</button></div>
+   <button class="btn">Đăng nhập</button><div class="or">hoặc</div><button type="button" class="btn sec" id="btn-google">🔵 Đăng nhập bằng Google</button><div class="msg"></div>
+   <div class="foot">Chưa có tài khoản? <button type="button" class="link" data-go="register">Đăng ký</button></div>
+  </form>
+  <form id="f-register" data-view="register" class="hidden">
+   <h2>Tạo tài khoản</h2><p class="sub">Đăng ký bằng email của bạn</p>
+   <label class="field"><span>Gmail thật của bạn (@gmail.com)</span><input id="r-email" type="email" required></label>
+   <label class="field"><span>Mật khẩu (≥ 6 ký tự)</span><div class="pw"><input id="r-pass" type="password" minlength="6" required><button type="button" data-eye="r-pass">👁</button></div></label>
+   <label class="field"><span>Nhập lại mật khẩu</span><input id="r-pass2" type="password" minlength="6" required></label>
+   <button class="btn">Đăng ký &amp; gửi link xác minh</button><div class="msg"></div><div class="foot" style="margin-top:8px">Link xác minh sẽ được gửi về Gmail (kiểm tra cả mục Spam).</div>
+   <div class="foot"><button type="button" class="link" data-go="login">← Quay lại đăng nhập</button></div>
+  </form>
+  <form id="f-forgot" data-view="forgot" class="hidden">
+   <h2>Quên mật khẩu</h2><p class="sub">Nhập email, chúng tôi sẽ gửi liên kết đặt lại mật khẩu</p>
+   <label class="field"><span>Email</span><input id="f-email" type="email" required></label>
+   <button class="btn">Gửi liên kết đặt lại</button><div class="msg"></div>
+   <div class="foot"><button type="button" class="link" data-go="login">← Quay lại đăng nhập</button></div>
+  </form>
+ </div></section></div>
+<script type="module" src="js/pages/login.js"></script></body></html>

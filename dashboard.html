@@ -1,0 +1,41 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Air Quality Dashboard</title>
+<link rel="stylesheet" href="css/base.css"><link rel="stylesheet" href="css/dashboard.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script></head>
+<body><div class="app" id="app">
+ <header class="topbar">
+  <button class="iconbtn" id="btn-menu" title="Menu">☰</button>
+  <div class="brand"><img src="assets/rooms/logo.svg" alt=""> AIR QUALITY DASHBOARD</div><span class="tab">SMART HOME</span>
+  <span class="sp"></span><label class="range-control" title="Khoảng dữ liệu InfluxDB">Lịch sử <select id="history-range"><option value="1h">1 giờ</option><option value="6h" selected>6 giờ</option><option value="24h">24 giờ</option><option value="7d">7 ngày</option><option value="30d">30 ngày</option></select></label><a id="btn-admin" class="adminlink hidden" href="admin.html">🛡 Quản trị</a><select id="dev-sel" class="devsel hidden" title="Thiết bị đang xem"></select><button class="iconbtn" id="btn-addev" title="Ghép thêm thiết bị">＋</button><span id="conn" class="pill off">Đang kết nối…</span><span id="device-ui" class="pill off" title="Trạng thái nút MIC và trang TFT">MIC: -- · TFT: --</span>
+  <button class="iconbtn" id="btn-bell" title="Thông báo">🔔<span class="badge hidden" id="bell-badge">0</span></button>
+  <button class="avatar" id="btn-user" title="Tài khoản">?</button>
+ </header>
+ <nav class="side" id="side"></nav>
+ <main class="main">
+  <h1 class="title">Hệ thống giám sát và điều khiển chất lượng không khí tích hợp AI</h1>
+  <div class="grid" id="grid">
+   <section class="card c-building" id="card-building" data-group="building" data-sensor="building"></section>
+   <section class="card c-aqs" id="card-aqs" data-group="air" data-sensor="aqs"></section>
+   <section class="card c-clock" id="card-clock" data-group="env" data-sensor="ds3231"></section>
+   <section class="card c-lux" id="card-lux" data-group="env" data-sensor="bh1750"></section>
+   <section class="card c-fan" id="card-fan" data-group="fan" data-sensor="fan"></section>
+   <section class="card c-co2" id="card-co2" data-group="air" data-sensor="scd41"></section>
+   <section class="card c-voc" id="card-voc" data-group="air" data-sensor="sgp41"></section>
+   <section class="card c-pm" id="card-pm" data-group="air" data-sensor="pms7003"></section>
+   <section class="card c-pmbar" id="card-pmbar" data-group="air" data-sensor="pms7003"></section>
+   <section class="card c-ai" id="card-ai" data-group="ai" data-sensor="assistant"></section>
+   <section class="card c-chart" id="card-chart" data-group="chart" data-sensor="chart"></section>
+   <section class="card c-set" id="card-set" data-group="chart" data-sensor="settings"></section>
+   <section class="card c-smart" id="card-smart" data-group="fan" data-sensor="smart"></section>
+   <section class="card c-health" id="card-health" data-group="air" data-sensor="health"></section>
+   <section class="card c-stat" id="card-stat" data-group="chart" data-sensor="stats"></section>
+   <section class="card c-lib" id="card-lib" data-group="data" data-sensor="library"></section>
+   <section class="card c-energy" id="card-energy" data-group="energy" data-sensor="energy"></section>
+   <section class="card c-reliability" id="card-reliability" data-group="network" data-sensor="reliability"></section>
+   <section class="card c-forecast" id="card-forecast" data-group="ai" data-sensor="forecast"></section>
+  </div>
+ </main>
+</div>
+<div class="notif hidden" id="notif"></div>
+<div id="modal-root"></div>
+<script type="module" src="js/pages/dashboard.js"></script></body></html>
