@@ -14,4 +14,4 @@ export const ADMIN_EMAIL = "admin@eair.local";     // email thật của tài kh
 export const ALLOWED_EMAIL_DOMAIN = "gmail.com";   // chỉ cho đăng ký bằng Gmail
 // Địa chỉ BACKEND (thư mục EAir_Backend) – nơi giữ GEMINI_API_KEY. Ví dụ chạy thử: "http://localhost:8787"; triển khai thật: "https://eair-backend.example.com".
 // Khóa Gemini KHÔNG nằm ở web, KHÔNG nằm trong Firebase: chỉ là biến môi trường GEMINI_API_KEY trên backend.
-export const BACKEND_URL = "http://localhost:8787";
+export const BACKEND_URL ="https://eair-purifier-backend.onrender.com";
